@@ -1,0 +1,1 @@
+web: gunicorn webcam_project.wsgi
