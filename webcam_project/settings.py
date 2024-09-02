@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y@0ngs7hv2pc3^0d9l4mwnvv=1laj^c(0+ktug#wj38nx23-k=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['webcam-test.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
