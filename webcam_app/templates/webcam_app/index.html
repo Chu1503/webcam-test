@@ -3,39 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcam</title>
+    <title>Webcam with Pose Detection</title>
     <style>
         body { background-color: black; color: white; text-align: center; }
-        video { width: 50%; height: auto; margin-top: 20px; border: 2px solid white; }
+        video { width: 80%; margin-top: 20px; }
         button { margin: 10px; padding: 10px; }
     </style>
 </head>
 <body>
-    <h1>Webcam Feed</h1>
-    <video id="webcam" autoplay></video>
+    <h1>Webcam Feed with Pose Detection</h1>
+    <img id="videoFeed" src="{% url 'video_feed' %}" width="80%" />
     <br>
-    <button onclick="startWebcam()">Open Webcam</button>
-    <button onclick="stopWebcam()">Close Webcam</button>
-
-    <script>
-        let stream = null;
-
-        async function startWebcam() {
-            try {
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                document.getElementById('webcam').srcObject = stream;
-            } catch (err) {
-                console.error('Error accessing webcam: ', err);
-            }
-        }
-
-        function stopWebcam() {
-            if (stream) {
-                let tracks = stream.getTracks();
-                tracks.forEach(track => track.stop());
-                document.getElementById('webcam').srcObject = null;
-            }
-        }
-    </script>
+    <button onclick="location.reload()">Reload</button>
 </body>
 </html>
